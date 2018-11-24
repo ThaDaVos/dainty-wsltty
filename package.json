@@ -1,5 +1,5 @@
 {
-  "name": "dainty-mintty",
+  "name": "dainty-wsltty",
   "scripts": {
     "build": "node src/index.js"
   },
