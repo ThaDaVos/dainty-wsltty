@@ -1,0 +1,10 @@
+{
+  "name": "dainty-mintty",
+  "scripts": {
+    "build": "node src/index.js"
+  },
+  "dependencies": {
+    "dainty-shared": "file:../dainty-shared",
+    "minimist": "1.2.0"
+  }
+}

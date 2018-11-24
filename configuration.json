@@ -1,0 +1,10 @@
+{
+  "variant": "dark",
+  "colors": {
+    "adjustments": {
+      "lightness": -2,
+      "chroma": 0
+    },
+    "overrides": {}
+  }
+}
