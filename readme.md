@@ -1,6 +1,6 @@
 # Dainty for WSLtty
 
-Dainty for WSLtty is a configurable, refined, and balanced color theme using carefully selected colors within the CIELAB color space. It is designed to maximize readability and reduce eye strain.
+Dainty is a configurable, refined, and balanced color theme using carefully selected colors within the CIELAB color space. It is designed to maximize readability and reduce eye strain.
 
 ## Setup
 
