@@ -6,17 +6,17 @@ Dainty is a configurable, refined, and balanced color theme using carefully sele
 
     git clone https://github.com/alexanderte/dainty-wsltty.git
     cd dainty-wsltty
-    npm install
+    yarn install
 
 ## Build
 
-    npm run build
+    yarn build
 
 The `build` script builds `dainty` to `dist` directory.
 
 ## Build and install
 
-    npm run build -- -i
+    yarn build -i
 
 The `build` script, when run with `-i` or `--install`, builds and installs `dainty` to the WSLtty `themes` directory.
 
