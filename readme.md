@@ -22,7 +22,7 @@ The `build` script, when run with `-i` or `--install`, builds and installs `dain
 
 ## Configuration
 
-Dainty can be configured by editing `configuration.json`. See [Configuration among applications](https://github.com/alexanderte/dainty-shared/blob/master/configuration-shared.md) for more details.
+Dainty can be configured by editing `configuration.json`. The file is generated if it doesn’t exist by running `yarn build`. Its schema is defined by [`configuration-schema.json`](https://github.com/alexanderte/dainty-vs/blob/master/configuration-schema.json). See [Shared configuration](https://github.com/alexanderte/dainty-shared/blob/master/shared-configuration.md) for configuration shared by Dainty for different applications.
 
 ## License
 
