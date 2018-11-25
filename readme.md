@@ -4,10 +4,6 @@ Dainty is a configurable, refined, and balanced color theme using carefully sele
 
 ## Setup
 
-    git clone https://github.com/alexanderte/dainty-shared.git
-    cd dainty-shared
-    npm install
-    cd ..
     git clone https://github.com/alexanderte/dainty-wsltty.git
     cd dainty-wsltty
     npm install
