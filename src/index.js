@@ -29,7 +29,7 @@ function generateColorTheme(colors) {
     BoldMagenta: r(colors.purple[34]),
     BoldRed: r(colors.red[34]),
     BoldWhite: r(colors.blueGray[39]),
-    BoldYellow: r(colors.orange[33]),
+    BoldYellow: r(colors.yellow[34]),
     CursorColour: r(colors.blueGray[28]),
     Cyan: r(colors.cyan[26]),
     ForegroundColour: r(colors.blueGray[34]),
@@ -37,7 +37,7 @@ function generateColorTheme(colors) {
     Magenta: r(colors.purple[26]),
     Red: r(colors.red[26]),
     White: r(colors.blueGray[34]),
-    Yellow: r(colors.orange[34])
+    Yellow: r(colors.yellow[26])
   };
 }
 
