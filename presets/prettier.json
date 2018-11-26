@@ -4,12 +4,11 @@
       "chromaEnd": -5
     },
     "overrides": {
-      "blueGray": "#192024",
+      "blueGray": "#1c2b33",
       "blue": "#6ab3b2",
       "green": "#6ab3b2",
       "orange": "#f2ba54",
-      "purple": "#c098c5",
-      "red": "#df5f62"
+      "purple": "#c098c5"
     }
   }
 }
