@@ -32,7 +32,7 @@ To install the theme using `yarn build`, you need to run Git Bash as administrat
 
 Dainty can be configured by editing `configuration.json`. The file is generated if it doesn’t exist while running `yarn build`. Its schema is defined by [`configuration-schema.json`](https://github.com/alexanderte/dainty-vs/blob/master/configuration-schema.json). See [Shared configuration](https://github.com/alexanderte/dainty-shared/blob/master/shared-configuration.md) for configuration shared by Dainty for different applications.
 
-### Disable green directories
+## Disable green directories
 
 Directories with permissions `777` are rendered as blue on green. In WSL, this applies to most directories. This can be fixed by setting `LS_COLORS` in `~/.bashrc`:
 
