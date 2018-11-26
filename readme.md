@@ -1,4 +1,4 @@
-# Dainty for WSLtty
+# Dainty for WSLtty/Mintty
 
 Dainty is a configurable, refined, and balanced color theme using carefully selected colors within the CIELAB color space. It is designed to maximize readability and reduce eye strain.
 
@@ -16,9 +16,17 @@ The `build` script builds `dainty` to `dist` directory.
 
 ## Build and install
 
+The `build` script, when run with `-i` or `--install`, builds and installs `dainty` to the WSLtty/Mintty `themes` directory.
+
+### WSLtty
+
     yarn build -i
 
-The `build` script, when run with `-i` or `--install`, builds and installs `dainty` to the WSLtty `themes` directory.
+### Mintty
+
+    yarn build -i -t mintty
+
+To install the theme using `yarn build`, Mintty needs to be installed through Git for Windows. You also need to run Git Bash as administrator.
 
 ## Configuration
 
