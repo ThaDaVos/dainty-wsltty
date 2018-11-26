@@ -72,10 +72,17 @@ function generateColorTheme(colors) {
   data.push("");
 
   if (argv.install || argv.i) {
-    const target = path.join(
-      await appDataPath("Local"),
-      "wsltty/usr/share/mintty/themes/dainty"
-    );
+    let type = argv.type || argv.t;
+    let target;
+
+    if (type === "mintty") {
+      target = "C:\\Program Files\\Git\\usr\\share\\mintty\\themes\\dainty";
+    } else {
+      target = path.join(
+        await appDataPath("Local"),
+        "wsltty/usr/share/mintty/themes/dainty"
+      );
+    }
 
     await backupFile(__dirname, target);
     await writeFileLog(target, data.join("\n"));
