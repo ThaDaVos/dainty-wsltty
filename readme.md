@@ -26,7 +26,7 @@ The `build` script, when run with `-i` or `--install`, builds and installs `dain
 
     yarn build -i -t mintty
 
-To install the theme using `yarn build`, Mintty needs to be installed through Git for Windows. You also need to run Git Bash as administrator.
+To install the theme using `yarn build`, Mintty needs to be installed through Git for Windows using the default installation path. You also need to run Git Bash as administrator.
 
 ## Configuration
 
