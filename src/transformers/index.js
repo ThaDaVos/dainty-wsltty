@@ -1,4 +1,4 @@
-const { getCustomizations } = require("../customizations");
+const { getMappings } = require("../mappings");
 
 function transformTheme(colors) {
   let data = [
@@ -7,10 +7,10 @@ function transformTheme(colors) {
     ""
   ];
 
-  const customizations = getCustomizations(colors);
+  const mappings = getMappings(colors);
 
-  for (const key of Object.keys(customizations)) {
-    data.push(`${key}=${customizations[key]}`);
+  for (const key of Object.keys(mappings)) {
+    data.push(`${key}=${mappings[key]}`);
   }
 
   data.push("");

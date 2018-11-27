@@ -6,7 +6,7 @@ function r(color) {
   return `${r}, ${g}, ${b}`;
 }
 
-function getCustomizations(colors) {
+function getMappings(colors) {
   return {
     BackgroundColour: r(colors.blueGray[0]),
     Black: r(colors.blueGray[0]),
@@ -31,5 +31,5 @@ function getCustomizations(colors) {
 }
 
 module.exports = {
-  getCustomizations
+  getMappings
 };
