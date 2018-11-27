@@ -10,23 +10,23 @@ function getMappings(colors) {
   return {
     BackgroundColour: r(colors.blueGray[0]),
     Black: r(colors.blueGray[0]),
-    Blue: r(colors.blue[28]),
-    BoldBlack: r(colors.blueGray[28]),
-    BoldBlue: r(colors.blue[28]),
-    BoldCyan: r(colors.cyan[28]),
-    BoldGreen: r(colors.green[28]),
-    BoldMagenta: r(colors.purple[28]),
-    BoldRed: r(colors.red[28]),
+    Blue: r(colors.blue[30]),
+    BoldBlack: r(colors.blueGray[30]),
+    BoldBlue: r(colors.blue[30]),
+    BoldCyan: r(colors.cyan[30]),
+    BoldGreen: r(colors.green[30]),
+    BoldMagenta: r(colors.purple[30]),
+    BoldRed: r(colors.red[30]),
     BoldWhite: r(colors.blueGray[39]),
-    BoldYellow: r(colors.yellow[28]),
-    CursorColour: r(colors.blueGray[28]),
-    Cyan: r(colors.cyan[28]),
+    BoldYellow: r(colors.yellow[30]),
+    CursorColour: r(colors.blueGray[30]),
+    Cyan: r(colors.cyan[30]),
     ForegroundColour: r(colors.blueGray[34]),
     Green: r(colors.green[16]),
-    Magenta: r(colors.purple[28]),
+    Magenta: r(colors.purple[30]),
     Red: r(colors.red[16]),
     White: r(colors.blueGray[34]),
-    Yellow: r(colors.yellow[28])
+    Yellow: r(colors.yellow[30])
   };
 }
 
