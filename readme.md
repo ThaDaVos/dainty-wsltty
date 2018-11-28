@@ -6,7 +6,7 @@ Dainty is a configurable, refined, and balanced color theme using carefully sele
 
     git clone https://github.com/alexanderte/dainty-wsltty.git
     cd dainty-wsltty
-    yarn install
+    yarn
 
 ## Build
 
