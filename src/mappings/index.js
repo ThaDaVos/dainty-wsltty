@@ -19,7 +19,7 @@ function getMappings(colors) {
     BoldRed: r(colors.red[30]),
     BoldWhite: r(colors.blueGray[39]),
     BoldYellow: r(colors.yellow[30]),
-    CursorColour: r(colors.blueGray[30]),
+    CursorColour: r(colors.blue[24]),
     Cyan: r(colors.cyan[30]),
     ForegroundColour: r(colors.blueGray[34]),
     Green: r(colors.green[16]),
