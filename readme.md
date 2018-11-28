@@ -56,6 +56,8 @@ function ps1_pwd {
         echo ~${pwd:${#windows_home}}
     elif [[ $pwd == $wsl_home* ]]; then
         echo ≈${pwd:${#wsl_home}}
+    elif [[ $pwd != "/" ]]; then
+        echo $pwd
     fi
 }
 
