@@ -52,7 +52,7 @@ function ps1_pwd {
 
     if [[ $pwd == $windows_home* ]]; then
         echo ~${pwd:${#windows_home}}
-    elif [[ `pwd` == $wsl_home* ]]; then
+    elif [[ $pwd == $wsl_home* ]]; then
         echo ≈${pwd:${#wsl_home}}
     fi
 }
