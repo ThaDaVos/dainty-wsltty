@@ -38,11 +38,13 @@ Dainty can be configured by editing `configuration.json`. The file is generated 
 
 Directories with permissions `777` are rendered as blue on green. In WSL, this applies to most directories. This can be disabled by setting `LS_COLORS` in `.bashrc`:
 
-    LS_COLORS='ow=01;34'
+```bash
+LS_COLORS='ow=01;34'
+```
 
 ### Shorten `PS1` prompt
 
-Paths in WSL might become verbose; especially when working with code mounted on the Windows file system. By adding the following to `.bashrc` and replacing the first two variables, the Windows paths will render as `~/`. Linux paths will render as `≈/`.
+Paths in WSL might become verbose when working with code mounted on the Windows file system. By adding the following to `.bashrc` and replacing the first two variables, the Windows paths will render as `~/`. Linux paths will render as `≈/`.
 
 ```bash
 function ps1_pwd {
