@@ -45,19 +45,19 @@ Directories with permissions `777` are rendered as blue on green. In WSL, this a
 Paths in WSL might become verbose; especially when working with code mounted on the Windows file system. By adding the following to `.bashrc` and replacing the first two variables, the Windows paths will render as `~/`. Linux paths will render as `≈/`.
 
 ```bash
-    function ps1_pwd {
-        windows_home="/mnt/c/Users/Alexander Teinum"
-        wsl_home="/home/alexanderte"
-        pwd=`pwd`
+function ps1_pwd {
+    windows_home="/mnt/c/Users/Alexander Teinum"
+    wsl_home="/home/alexanderte"
+    pwd=`pwd`
 
-        if [[ $pwd == $windows_home* ]]; then
-            echo ~${pwd:${#windows_home}}
-        elif [[ `pwd` == $wsl_home* ]]; then
-            echo ≈${pwd:${#wsl_home}}
-        fi
-    }
+    if [[ $pwd == $windows_home* ]]; then
+        echo ~${pwd:${#windows_home}}
+    elif [[ `pwd` == $wsl_home* ]]; then
+        echo ≈${pwd:${#wsl_home}}
+    fi
+}
 
-    export PS1='`ps1_pwd`/ '
+export PS1='`ps1_pwd`/ '
 ```
 
 ## License
