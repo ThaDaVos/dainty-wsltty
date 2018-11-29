@@ -32,7 +32,9 @@ To install the theme using `yarn build`, you need to run Git Bash as administrat
 
 Dainty can be configured by editing `configuration.json`. The file is generated if it doesn’t exist while running `yarn build`. Its schema is defined by [`configuration-schema.json`](https://github.com/alexanderte/dainty-vs/blob/master/configuration-schema.json). See [Shared configuration](https://github.com/alexanderte/dainty-shared/blob/master/shared-configuration.md) for configuration shared by Dainty for different applications.
 
-## A solution for green directories
+## Extras
+
+### Avoiding blue-on-green directories
 
 Directories with permissions `777` are rendered as blue on green. In WSL, the current default mount and process umask setting causes this to be applied to most directories. To instead mount directories with permissions 755, and enable using `chmod` within the Windows mount, add `/etc/wsl.conf` with the following content:
 
@@ -61,7 +63,7 @@ It might not be needed, but the following can be added to `.bashrc` to prevent d
 export LS_COLORS='ow=01;34'
 ```
 
-## Shorten `PS1` prompt
+### Shortening `PS1` prompt
 
 Paths in WSL might become verbose when working with code mounted on the Windows file system. By adding the following to `.bashrc` and replacing the first two variables, the Windows paths will render as `≈/`. Linux paths will render as `~/`.
 
@@ -82,6 +84,18 @@ function ps1_pwd {
 
 export PS1='`ps1_pwd`/ '
 ```
+
+### Changing window title
+
+The WSLtty window title can be set to “WSLtty” by adding the following in `.bashrc`:
+
+```bash
+echo -ne "\e]0;WSLtty\a"
+```
+
+### Changing icon
+
+Under `extras` in the repository there is an `.ico` file with the terminal Feather icon stroked with the Dainty blue 24 color. This can be set by setting the icon for the WSLtty shortcut.
 
 ## License
 
