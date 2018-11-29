@@ -87,7 +87,7 @@ export PS1='`ps1_pwd`/ '
 
 ### Changing window title
 
-The WSLtty window title can be set to “WSLtty” by adding the following in `.bashrc`:
+The WSLtty window title can be set to “WSLtty” by adding the following to `.bashrc`:
 
 ```bash
 echo -ne "\e]0;WSLtty\a"
