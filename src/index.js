@@ -1,6 +1,9 @@
 const parseArgs = require("minimist");
 const { getConfiguration } = require("dainty-shared").configuration;
-const { generateColorPalette } = require("dainty-shared").colors;
+const {
+  generateColorPalette,
+  generateColorConstants
+} = require("dainty-shared").colors;
 const { buildThemeFile } = require("./builders");
 
 (async () => {
@@ -19,11 +22,14 @@ const { buildThemeFile } = require("./builders");
     return;
   }
 
-  generateColorPalette(configuration);
+  const colors = generateColorPalette(configuration);
+  const colorConstants = generateColorConstants(colors);
 
   buildThemeFile(
     __dirname,
-    generateColorPalette(configuration),
+    configuration,
+    colors,
+    colorConstants,
     argv.install || argv.i,
     argv.type || argv.t
   );

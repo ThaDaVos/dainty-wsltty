@@ -7,7 +7,14 @@ const {
 } = require("dainty-shared").utils;
 const { transformTheme } = require("../transformers");
 
-async function buildThemeFile(dirname, colors, install, type) {
+async function buildThemeFile(
+  dirname,
+  configuration,
+  colors,
+  colorConstants,
+  install,
+  type
+) {
   if (install) {
     let target;
 
@@ -21,12 +28,15 @@ async function buildThemeFile(dirname, colors, install, type) {
     }
 
     await backupFile(dirname, target);
-    await writeFileLog(target, transformTheme(colors));
+    await writeFileLog(
+      target,
+      transformTheme(configuration, colors, colorConstants)
+    );
   } else {
     await createDistDirectory(dirname);
     await writeFileLog(
       path.join(dirname, "../dist/dainty"),
-      transformTheme(colors)
+      transformTheme(configuration, colors, colorConstants)
     );
   }
 }

@@ -1,16 +1,40 @@
-const { getMappings } = require("../mappings");
+const { getCustomizations } = require("../customizations");
+const { translateColorConstant } = require("dainty-shared").colors;
 
-function transformTheme(colors) {
+function translateColor(color) {
+  const r = parseInt(color.substr(1, 2), 16);
+  const g = parseInt(color.substr(3, 2), 16);
+  const b = parseInt(color.substr(5, 2), 16);
+
+  return `${r}, ${g}, ${b}`;
+}
+
+function transformTheme(configuration, colors, colorConstants) {
   let data = [
     "# source: https://github.com/alexanderte/dainty-wsltty",
     "# MIT License",
     ""
   ];
 
-  const mappings = getMappings(colors);
+  function getTerminalColor(colorName) {
+    const dark = configuration.variant !== "light";
 
-  for (const key of Object.keys(mappings)) {
-    data.push(`${key}=${mappings[key]}`);
+    const terminalColor = configuration.customizations.terminal[colorName];
+
+    console.log({ colorName, terminalColor });
+
+    return translateColor(
+      translateColorConstant(
+        colorConstants,
+        dark ? terminalColor.dark : terminalColor.light
+      )
+    );
+  }
+
+  const customizations = getCustomizations(getTerminalColor);
+
+  for (const key of Object.keys(customizations)) {
+    data.push(`${key}=${customizations[key]}`);
   }
 
   data.push("");
