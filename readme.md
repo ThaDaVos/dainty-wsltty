@@ -39,7 +39,7 @@ Dainty can be configured by editing `configuration.json`. The file is generated 
 Directories with permissions `777` are rendered as blue on green. In WSL, this applies to most directories. This can be disabled by setting `LS_COLORS` in `.bashrc`:
 
 ```bash
-LS_COLORS='ow=01;34'
+export LS_COLORS='ow=01;34'
 ```
 
 ### Shorten `PS1` prompt
