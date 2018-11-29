@@ -10,7 +10,6 @@ const { transformTheme } = require("../transformers");
 async function buildThemeFile(
   dirname,
   configuration,
-  colors,
   colorConstants,
   install,
   type
@@ -28,15 +27,12 @@ async function buildThemeFile(
     }
 
     await backupFile(dirname, target);
-    await writeFileLog(
-      target,
-      transformTheme(configuration, colors, colorConstants)
-    );
+    await writeFileLog(target, transformTheme(configuration, colorConstants));
   } else {
     await createDistDirectory(dirname);
     await writeFileLog(
       path.join(dirname, "../dist/dainty"),
-      transformTheme(configuration, colors, colorConstants)
+      transformTheme(configuration, colorConstants)
     );
   }
 }

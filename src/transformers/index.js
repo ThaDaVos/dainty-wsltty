@@ -1,5 +1,5 @@
 const { getCustomizations } = require("../customizations");
-const { translateColorConstant } = require("dainty-shared").colors;
+const { getTerminalColorFunction } = require("dainty-shared").colors;
 
 function translateColor(color) {
   const r = parseInt(color.substr(1, 2), 16);
@@ -9,32 +9,19 @@ function translateColor(color) {
   return `${r}, ${g}, ${b}`;
 }
 
-function transformTheme(configuration, colors, colorConstants) {
+function transformTheme(configuration, colorConstants) {
   let data = [
     "# source: https://github.com/alexanderte/dainty-wsltty",
     "# MIT License",
     ""
   ];
 
-  function getTerminalColor(colorName) {
-    const dark = configuration.variant !== "light";
-
-    const terminalColor = configuration.customizations.terminal[colorName];
-
-    console.log({ colorName, terminalColor });
-
-    return translateColor(
-      translateColorConstant(
-        colorConstants,
-        dark ? terminalColor.dark : terminalColor.light
-      )
-    );
-  }
-
-  const customizations = getCustomizations(getTerminalColor);
+  const customizations = getCustomizations(
+    getTerminalColorFunction(configuration, colorConstants)
+  );
 
   for (const key of Object.keys(customizations)) {
-    data.push(`${key}=${customizations[key]}`);
+    data.push(`${key}=${translateColor(customizations[key])}`);
   }
 
   data.push("");

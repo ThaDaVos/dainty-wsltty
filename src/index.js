@@ -28,7 +28,6 @@ const { buildThemeFile } = require("./builders");
   buildThemeFile(
     __dirname,
     configuration,
-    colors,
     colorConstants,
     argv.install || argv.i,
     argv.type || argv.t
