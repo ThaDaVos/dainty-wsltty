@@ -1,7 +1,7 @@
 const parseArgs = require("minimist");
 const { getConfiguration } = require("dainty-shared").configuration;
 const {
-  generateColorPalette,
+  generateColorScales,
   generateColorConstants
 } = require("dainty-shared").colors;
 const { buildThemeFile } = require("./builders");
@@ -22,7 +22,7 @@ const { buildThemeFile } = require("./builders");
     return;
   }
 
-  const colors = generateColorPalette(configuration);
+  const colors = generateColorScales(configuration);
   const colorConstants = generateColorConstants(colors);
 
   buildThemeFile(
