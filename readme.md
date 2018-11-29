@@ -34,7 +34,7 @@ Dainty can be configured by editing `configuration.json`. The file is generated 
 
 ## A solution for green directories
 
-Directories with permissions `777` are rendered as blue on green. In WSL, the current default mount and process umask setting causes this to be applied to directories. To instead mount directories with permissions 755, and enable using `chmod` within the Windows mount, add `/etc/wsl.conf` with the following content:
+Directories with permissions `777` are rendered as blue on green. In WSL, the current default mount and process umask setting causes this to be applied to most directories. To instead mount directories with permissions 755, and enable using `chmod` within the Windows mount, add `/etc/wsl.conf` with the following content:
 
 ```ini
 [automount]
