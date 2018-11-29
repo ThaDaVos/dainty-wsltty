@@ -32,19 +32,38 @@ To install the theme using `yarn build`, you need to run Git Bash as administrat
 
 Dainty can be configured by editing `configuration.json`. The file is generated if it doesn’t exist while running `yarn build`. Its schema is defined by [`configuration-schema.json`](https://github.com/alexanderte/dainty-vs/blob/master/configuration-schema.json). See [Shared configuration](https://github.com/alexanderte/dainty-shared/blob/master/shared-configuration.md) for configuration shared by Dainty for different applications.
 
-## `.bashrc` configuration
+## A solution for green directories
 
-### Disable green directories
+Directories with permissions `777` are rendered as blue on green. In WSL, the current default mount and process umask setting causes this to be applied to directories. To instead mount directories with permissions 755, and enable using `chmod` within the Windows mount, add `/etc/wsl.conf` with the following content:
 
-Directories with permissions `777` are rendered as blue on green. In WSL, this applies to most directories. This can be disabled by setting `LS_COLORS` in `.bashrc`:
+```ini
+[automount]
+enabled = true
+options = "metadata,umask=0022,fmask=0011"
+mountFsTab = false
+```
+
+There currently is [an issue](https://github.com/Microsoft/WSL/issues/352) preventing the default `/etc/profile` umask from being applied. This means that newly created files and directories are created with permissions `666` and `777`, respectively. A workaround is adding the following to `.bashrc`:
+
+```bash
+umask 022
+```
+
+Even after these changes you might have files with the executable flag set. I would suggest to only remove the flag for files that you know. The flag can be removed recursively in a directory by running:
+
+```bash
+chmod -R -x+X name-of-directory
+```
+
+It might not be needed, but the following can be added to `.bashrc` to prevent directories with permissions `777` render as blue on green:
 
 ```bash
 export LS_COLORS='ow=01;34'
 ```
 
-### Shorten `PS1` prompt
+## Shorten `PS1` prompt
 
-Paths in WSL might become verbose when working with code mounted on the Windows file system. By adding the following to `.bashrc` and replacing the first two variables, the Windows paths will render as `~/`. Linux paths will render as `≈/`.
+Paths in WSL might become verbose when working with code mounted on the Windows file system. By adding the following to `.bashrc` and replacing the first two variables, the Windows paths will render as `≈/`. Linux paths will render as `~/`.
 
 ```bash
 function ps1_pwd {
@@ -53,9 +72,9 @@ function ps1_pwd {
     pwd=`pwd`
 
     if [[ $pwd == $windows_home* ]]; then
-        echo ~${pwd:${#windows_home}}
+        echo ≈${pwd:${#windows_home}}
     elif [[ $pwd == $wsl_home* ]]; then
-        echo ≈${pwd:${#wsl_home}}
+        echo ~${pwd:${#wsl_home}}
     elif [[ $pwd != "/" ]]; then
         echo $pwd
     fi
