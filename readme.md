@@ -1,6 +1,6 @@
 # Dainty for WSLtty/Mintty
 
-Dainty is a configurable, refined, and balanced color theme using carefully selected colors within the CIELAB color space. It is designed to maximize readability and reduce eye strain.
+Dainty is a color theme generator with support for Visual Studio Code. Dainty Light and Dainty Dark are the default presets. They’re balanced and refined color themes, using carefully selected colors within the CIELAB color space.
 
 ## Setup
 
@@ -30,7 +30,7 @@ To install the theme using `yarn build`, you need to run Git Bash as administrat
 
 ## Configuration
 
-Dainty can be configured by editing `configuration.jsonc`. The file is generated if it doesn’t exist while running `yarn build`. Its schema is defined by [`configuration-schema.json`](https://github.com/alexanderte/dainty-vs/blob/master/configuration-schema.json). See [Shared configuration](https://github.com/alexanderte/dainty-shared/blob/master/shared-configuration.md) for configuration shared by Dainty for different applications.
+Dainty can be configured by editing `configuration.json`. The file is generated if it doesn’t exist while running `yarn build`. See [Configuration](https://github.com/alexanderte/dainty-shared/blob/master/configuration.md) for more information.
 
 ## Extras
 
@@ -99,4 +99,4 @@ Under `extras` in the repository there is an `.ico` file with the terminal Feath
 
 ## License
 
-Dainty for WSLtty is licensed under the [MIT License](https://github.com/alexanderte/dainty-wsltty/blob/master/license.md).
+Dainty is licensed under the [MIT License](https://github.com/alexanderte/dainty-wsltty/blob/master/license.md).
