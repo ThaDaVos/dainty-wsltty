@@ -1,24 +1,24 @@
-function getCustomizations(getTerminalColor) {
+function getCustomizations(getProperty) {
   return {
-    BackgroundColour: getTerminalColor("background"),
-    Black: getTerminalColor("black"),
-    Blue: getTerminalColor("blue"),
-    BoldBlack: getTerminalColor("brightBlack"),
-    BoldBlue: getTerminalColor("brightBlue"),
-    BoldCyan: getTerminalColor("brightCyan"),
-    BoldGreen: getTerminalColor("brightGreen"),
-    BoldMagenta: getTerminalColor("brightMagenta"),
-    BoldRed: getTerminalColor("brightRed"),
-    BoldWhite: getTerminalColor("brightWhite"),
-    BoldYellow: getTerminalColor("brightYellow"),
-    CursorColour: getTerminalColor("cursor"),
-    Cyan: getTerminalColor("cyan"),
-    ForegroundColour: getTerminalColor("foreground"),
-    Green: getTerminalColor("green"),
-    Magenta: getTerminalColor("magenta"),
-    Red: getTerminalColor("red"),
-    White: getTerminalColor("white"),
-    Yellow: getTerminalColor("yellow")
+    BackgroundColour: getProperty("background"),
+    Black: getProperty("terminal.black"),
+    Blue: getProperty("terminal.blue"),
+    BoldBlack: getProperty("terminal.brightBlack"),
+    BoldBlue: getProperty("terminal.brightBlue"),
+    BoldCyan: getProperty("terminal.brightCyan"),
+    BoldGreen: getProperty("terminal.brightGreen"),
+    BoldMagenta: getProperty("terminal.brightMagenta"),
+    BoldRed: getProperty("terminal.brightRed"),
+    BoldWhite: getProperty("terminal.brightWhite"),
+    BoldYellow: getProperty("terminal.brightYellow"),
+    CursorColour: getProperty("cursor"),
+    Cyan: getProperty("terminal.cyan"),
+    ForegroundColour: getProperty("foreground"),
+    Green: getProperty("terminal.green"),
+    Magenta: getProperty("terminal.magenta"),
+    Red: getProperty("terminal.red"),
+    White: getProperty("terminal.white"),
+    Yellow: getProperty("terminal.yellow")
   };
 }
 

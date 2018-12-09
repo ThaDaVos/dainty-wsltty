@@ -1,5 +1,8 @@
 const { getCustomizations } = require("../customizations");
-const { getTerminalColorFunction } = require("dainty-shared").colors;
+const {
+  getPropertyFunction,
+  getTypeShadeFunction
+} = require("dainty-shared").colors;
 
 function translateColor(color) {
   const r = parseInt(color.substr(1, 2), 16);
@@ -17,7 +20,7 @@ function transformTheme(configuration, colorConstants) {
   ];
 
   const customizations = getCustomizations(
-    getTerminalColorFunction(configuration, colorConstants)
+    getPropertyFunction(configuration, colorConstants)
   );
 
   for (const key of Object.keys(customizations)) {
