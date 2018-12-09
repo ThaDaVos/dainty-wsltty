@@ -12,7 +12,7 @@ function translateColor(color) {
   return `${r}, ${g}, ${b}`;
 }
 
-function transformTheme(configuration, colorConstants) {
+function transformTheme(configuration, colors, colorConstants) {
   let data = [
     "# source: https://github.com/alexanderte/dainty-wsltty",
     "# MIT License",
@@ -20,7 +20,9 @@ function transformTheme(configuration, colorConstants) {
   ];
 
   const customizations = getCustomizations(
-    getPropertyFunction(configuration, colorConstants)
+    colors,
+    getPropertyFunction(configuration, colorConstants),
+    getTypeShadeFunction(configuration)
   );
 
   for (const key of Object.keys(customizations)) {

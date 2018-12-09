@@ -1,6 +1,6 @@
-function getCustomizations(getProperty) {
+function getCustomizations(colors, getProperty, getTypeShade) {
   return {
-    BackgroundColour: getProperty("background"),
+    BackgroundColour: colors.neutral[getTypeShade(0)],
     Black: getProperty("terminal.black"),
     Blue: getProperty("terminal.blue"),
     BoldBlack: getProperty("terminal.brightBlack"),
@@ -13,7 +13,7 @@ function getCustomizations(getProperty) {
     BoldYellow: getProperty("terminal.brightYellow"),
     CursorColour: getProperty("cursor"),
     Cyan: getProperty("terminal.cyan"),
-    ForegroundColour: getProperty("foreground"),
+    ForegroundColour: colors.neutral[getTypeShade(34)],
     Green: getProperty("terminal.green"),
     Magenta: getProperty("terminal.magenta"),
     Red: getProperty("terminal.red"),
