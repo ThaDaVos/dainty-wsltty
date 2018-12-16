@@ -1,6 +1,5 @@
 {
   "name": "dainty-wsltty",
-  "version": "0.1.0",
   "scripts": {
     "build": "node src/index.js"
   },
