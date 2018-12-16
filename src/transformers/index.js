@@ -1,10 +1,11 @@
 const { getCustomizations } = require("../customizations");
 const {
   getPropertyFunction,
+  getColorFunction,
   getTypeShadeFunction
-} = require("dainty-shared").colors;
+} = require("dainty-shared/src/colors");
 
-function translateColor(color) {
+function convert(color) {
   const r = parseInt(color.substr(1, 2), 16);
   const g = parseInt(color.substr(3, 2), 16);
   const b = parseInt(color.substr(5, 2), 16);
@@ -12,7 +13,7 @@ function translateColor(color) {
   return `${r}, ${g}, ${b}`;
 }
 
-function transformTheme(configuration, colors, colorConstants) {
+function transformTheme(configuration) {
   let data = [
     "# source: https://github.com/alexanderte/dainty-wsltty",
     "# MIT License",
@@ -20,13 +21,13 @@ function transformTheme(configuration, colors, colorConstants) {
   ];
 
   const customizations = getCustomizations(
-    colors,
-    getPropertyFunction(configuration, colorConstants),
+    getColorFunction(configuration),
+    getPropertyFunction(configuration, getColorFunction(configuration)),
     getTypeShadeFunction(configuration)
   );
 
   for (const key of Object.keys(customizations)) {
-    data.push(`${key}=${translateColor(customizations[key])}`);
+    data.push(`${key}=${convert(customizations[key])}`);
   }
 
   data.push("");

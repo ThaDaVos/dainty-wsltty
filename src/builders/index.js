@@ -4,17 +4,10 @@ const {
   writeFileLog,
   createDistDirectory,
   appDataPath
-} = require("dainty-shared").utils;
+} = require("dainty-shared/src/utils");
 const { transformTheme } = require("../transformers");
 
-async function buildThemeFile(
-  dirname,
-  configuration,
-  colors,
-  colorConstants,
-  install,
-  type
-) {
+async function buildThemeFile(dirname, configuration, install, type) {
   if (install) {
     let target;
 
@@ -28,15 +21,12 @@ async function buildThemeFile(
     }
 
     await backupFile(dirname, target);
-    await writeFileLog(
-      target,
-      transformTheme(configuration, colors, colorConstants)
-    );
+    await writeFileLog(target, transformTheme(configuration));
   } else {
     await createDistDirectory(dirname);
     await writeFileLog(
       path.join(dirname, "../dist/dainty"),
-      transformTheme(configuration, colors, colorConstants)
+      transformTheme(configuration)
     );
   }
 }
