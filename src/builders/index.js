@@ -16,7 +16,7 @@ async function buildThemeFile(dirname, configuration, install, type) {
     } else {
       target = path.join(
         await appDataPath("Local"),
-        "wsltty/usr/share/mintty/themes/dainty"
+        "wsltty/themes/dainty"
       );
     }
 
